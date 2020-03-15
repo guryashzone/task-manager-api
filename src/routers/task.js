@@ -12,7 +12,7 @@ router.post('/tasks', auth, async (req, res) => {
 
     try {
         await task.save()
-        res.status(200).send(task)
+        res.status(201).send(task)
     } catch (e) {
         res.status(500).send(e)
     }
@@ -102,7 +102,7 @@ router.delete('/tasks/:id', auth, async (req, res) => {
 
         res.send(task)
     } catch (e) {
-        express.status(404).send()
+        res.status(404).send()
     }
 })
 
